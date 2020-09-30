@@ -18,15 +18,19 @@ class DiceApp extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Image.asset('images/dice1.png'),
-          )),
+            child: FlatButton(
+                onPressed: () {
+                  print("Left button clicked");
+                },
+                child: Image.asset('images/dice1.png')),
+          ),
           Expanded(
-              child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Image.asset('images/dice1.png'),
-          ))
+            child: FlatButton(
+                onPressed: () {
+                  print("Right button clicked");
+                },
+                child: Image.asset('images/dice1.png')),
+          ),
         ],
       ),
     );

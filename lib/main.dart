@@ -6,7 +6,10 @@ void main() {
     MaterialApp(
         home: Scaffold(
       backgroundColor: Colors.red,
-      appBar: AppBar(backgroundColor: Colors.red, title: Text('Dicee')),
+      appBar: AppBar(
+        backgroundColor: Colors.red,
+        title: Text('Dicee'),
+      ),
       body: DicePage(),
     )),
   );
@@ -29,24 +32,27 @@ class _DicePageState extends State<DicePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Row(
-        children: [
-          Expanded(
-            child: FlatButton(
-                onPressed: () {
-                  randomDice();
-                },
-                child: Image.asset('images/dice$leftDice.png')),
-          ),
-          Expanded(
-            child: FlatButton(
-                onPressed: () {
-                  randomDice();
-                },
-                child: Image.asset('images/dice$rightDice.png')),
-          ),
-        ],
+    return FlatButton(
+      onPressed: () {
+        randomDice();
+      },
+      child: Center(
+        child: Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset('images/dice$leftDice.png'),
+              ),
+            ),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Image.asset('images/dice$rightDice.png'),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
